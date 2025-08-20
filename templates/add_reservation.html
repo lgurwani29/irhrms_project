@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Add Reservation</h3>
+<form method="post" class="mt-3">
+  <div class="mb-3"><label class="form-label">PNR</label><input name="pnr" class="form-control" required></div>
+  <div class="mb-3"><label class="form-label">Passenger Name</label><input name="passenger_name" class="form-control" required></div>
+  <div class="mb-3"><label class="form-label">Train No</label><input name="train_no" class="form-control" required></div>
+  <div class="mb-3"><label class="form-label">Status</label><select name="status" class="form-select"><option>Confirmed</option><option>Waitlisted</option><option>RAC</option></select></div>
+  <button class="btn btn-primary">Save</button> <a class="btn btn-link" href="{{ url_for('reservations') }}">Cancel</a>
+</form>
+{% endblock %}

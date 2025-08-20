@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h3>IPAS — Payroll</h3><a class="btn btn-success" href="{{ url_for('add_payroll') }}">Add Payroll</a>
+</div>
+<table class="table table-striped"><thead class="table-dark"><tr><th>ID</th><th>Employee</th><th>Basic</th><th>Allowance</th><th>Net Pay</th><th>Actions</th></tr></thead><tbody>{% for r in rows %}<tr><td>{{ r.id }}</td><td>{{ r.employee.name }}</td><td>₹{{ r.basic }}</td><td>₹{{ r.allowance }}</td><td>₹{{ r.net_pay }}</td><td><a class="btn btn-sm btn-outline-primary" href="{{ url_for('edit_payroll', pid=r.id) }}">Edit</a> <a class="btn btn-sm btn-outline-danger" href="{{ url_for('delete_payroll', pid=r.id) }}">Delete</a></td></tr>{% endfor %}</tbody></table>{% if not rows %}<p class="text-muted">No payroll records yet.</p>{% endif %}{% endblock %}

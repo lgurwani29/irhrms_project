@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Edit Payroll</h3>
+<form method="post" class="mt-3">
+  <div class="mb-3"><label class="form-label">Employee</label><select name="employee_id" class="form-select" required>{% for e in employees %}<option value="{{ e.id }}" {% if e.id == row.employee_id %}selected{% endif %}>{{ e.name }}</option>{% endfor %}</select></div>
+  <div class="mb-3"><label class="form-label">Basic</label><input name="basic" type="number" class="form-control" value="{{ row.basic }}" required></div>
+  <div class="mb-3"><label class="form-label">Allowance</label><input name="allowance" type="number" class="form-control" value="{{ row.allowance }}" required></div>
+  <button class="btn btn-primary">Update</button> <a class="btn btn-link" href="{{ url_for('payroll') }}">Cancel</a>
+</form>
+{% endblock %}

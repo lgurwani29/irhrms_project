@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Edit Employee</h3>
+<form method="post" class="mt-3">
+  <div class="mb-3"><label class="form-label">Name</label><input name="name" class="form-control" value="{{ emp.name }}" required></div>
+  <div class="mb-3"><label class="form-label">Department</label><input name="department" class="form-control" value="{{ emp.department }}" required></div>
+  <div class="mb-3"><label class="form-label">Designation</label><input name="designation" class="form-control" value="{{ emp.designation }}" required></div>
+  <button class="btn btn-primary">Update</button> <a class="btn btn-link" href="{{ url_for('employees') }}">Cancel</a>
+</form>
+{% endblock %}

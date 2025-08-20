@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h3>IRHRMS — Employees</h3><a class="btn btn-success" href="{{ url_for('add_employee') }}">Add Employee</a>
+</div>
+<table class="table table-striped"><thead class="table-dark"><tr><th>ID</th><th>Name</th><th>Department</th><th>Designation</th><th>Actions</th></tr></thead><tbody>{% for emp in employees %}<tr><td>{{ emp.id }}</td><td>{{ emp.name }}</td><td>{{ emp.department }}</td><td>{{ emp.designation }}</td><td><a class="btn btn-sm btn-outline-primary" href="{{ url_for('edit_employee', emp_id=emp.id) }}">Edit</a> <a class="btn btn-sm btn-outline-danger" href="{{ url_for('delete_employee', emp_id=emp.id) }}">Delete</a></td></tr>{% endfor %}</tbody></table>{% if not employees %}<p class="text-muted">No employees yet.</p>{% endif %}{% endblock %}

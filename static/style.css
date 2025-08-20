@@ -1,0 +1,6 @@
+body { background: #f8fafc; color:#111827; }
+.hero { background: linear-gradient(90deg,#e9f2ff,#f8eef8); padding:24px; border-radius:12px; }
+.logo { height:42px; margin-right:10px; }
+.nav-brand { display:flex; align-items:center; gap:10px; }
+.footer { margin-top:32px; padding:16px 0; text-align:center; color:#6b7280; }
+.table-actions a { margin-right:6px; }
